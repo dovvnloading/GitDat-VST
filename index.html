@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Git-Dat VST</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Rajdhani:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              vst: {
+                bg: '#090a0c',      // Main background (Deepest)
+                panel: '#111318',   // Module background
+                surface: '#1a1d24', // Component surface
+                border: '#2d3340',  // Borders
+                light: '#3e4654',   // Light Borders
+                accent: '#00f0ff',  // Cyan / Electric Blue (Cyberpunk)
+                accentDim: 'rgba(0, 240, 255, 0.2)',
+                glow: '#00f0ff',    // Glow
+                muted: '#64748b',   // Muted text
+                text: '#e2e8f0',
+                success: '#10b981', // Green lights
+                warning: '#f59e0b', // Amber
+                danger: '#ef4444',  // Red
+              }
+            },
+            fontFamily: {
+              mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+              display: ['"Rajdhani"', 'sans-serif'],
+            },
+            boxShadow: {
+              'knob': '0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255,255,255,0.05)',
+              'screen': 'inset 0 0 20px rgba(0,0,0,0.8)',
+              'led': '0 0 5px #00f0ff, 0 0 10px #00f0ff',
+            },
+            backgroundImage: {
+              'carbon': "linear-gradient(45deg, #111318 25%, #0f1115 25%, #0f1115 50%, #111318 50%, #111318 75%, #0f1115 75%, #0f1115 100%)",
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #090a0c;
+        color: #e2e8f0;
+      }
+      /* Custom scrollbar for synth aesthetic */
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #090a0c;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #2d3340;
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #00f0ff;
+      }
+      .knob-track-bg {
+        stroke: #1a1d24;
+      }
+      .knob-track-fill {
+        stroke: #00f0ff;
+        filter: drop-shadow(0 0 2px #00f0ff);
+      }
+      .crt-overlay {
+        background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+        background-size: 100% 2px, 3px 100%;
+        pointer-events: none;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="overflow-hidden h-screen w-screen selection:bg-vst-accent selection:text-black">
+    <div id="root" class="h-full w-full"></div>
+    <script type="module" src="./index.tsx"></script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

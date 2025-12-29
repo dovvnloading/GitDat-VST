@@ -1,0 +1,5 @@
+{
+  "name": "Git-Dat VST",
+  "description": "A 3-oscillator subtractive synthesizer with intelligent patch evolution, designed for the web.",
+  "requestFramePermissions": []
+}
